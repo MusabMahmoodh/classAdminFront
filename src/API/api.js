@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const teacherUrl ="https://revisionclass.herokuapp.com/api/v1/teachers";
+const teacherUrl = "https://revisionclass.herokuapp.com/api/v1/teachers";
 
 export const login = (data) => axios.post(`${teacherUrl}`, data);
 export const validate = (token) =>

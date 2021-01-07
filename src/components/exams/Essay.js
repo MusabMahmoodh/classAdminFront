@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Form, Button } from "react-bootstrap";
 import DatePicker from "react-datepicker";
+import moment from "moment-timezone";
 import "react-datepicker/dist/react-datepicker.css";
+import "react-datetime/css/react-datetime.css";
+import Datetime from "react-datetime";
 import FileBase from "react-file-base64";
 import * as api from "../../API/api";
 import UserContext from "../../context/TeacherContext";
@@ -22,7 +25,7 @@ export const Essay = () => {
   const [subscription, setSubscription] = useState("0");
   const [description, setDescription] = useState("");
   const [start, setStart] = useState(Date.now());
-  const [ends, setEnds] = useState(null);
+  const [ends, setEnds] = useState(Date.now());
   const [duration, setDuration] = useState({
     hour: 0,
     minutes: 0,
@@ -59,15 +62,16 @@ export const Essay = () => {
       const newExam = {
         batch,
         subscription,
-        end_time: ends,
+        end_time: moment.tz(ends, "Asia/Colombo"),
         interval: duration,
         question,
-        start_time: start,
+        start_time: moment.tz(start, "Asia/Colombo"),
         answer,
         description,
         name,
         type,
       };
+
       const response = await api.createExam(newExam, userData.token);
       if (response.status === 201) {
         toast.success("Successfully created !", {
@@ -91,7 +95,7 @@ export const Essay = () => {
           progress: undefined,
         });
       }
-      // console.log(response.data.data);
+      console.log(response.data.data);
     } catch (error) {
       toast.error("Creation failed!", {
         position: "top-center",
@@ -163,36 +167,13 @@ export const Essay = () => {
       <Form.Row>
         <Form.Group controlId="exampleForm.ControlInput1">
           <Form.Label>StartsAt</Form.Label>
-          <DatePicker
-            selected={start}
-            onChange={(date) => setStart(date)}
-            minDate={new Date()}
-            showTimeSelect
-            closeWidgets
-            DateTimePicker
-            dateFormat="dd-MM-yyyy HH:mm:ss"
-            maxDate={new Date() + 5}
-            isClearable
-            meIntervals={15}
-            showYearDropdown
-            scrollableYearDropdown
-          />
+
+          <Datetime onChange={(e) => setStart(e._d)} />
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlInput1">
           <Form.Label>EndsAt</Form.Label>
-          <DatePicker
-            selected={ends}
-            onChange={(date) => setEnds(date)}
-            minDate={new Date()}
-            showTimeSelect
-            closeWidgets
-            DateTimePicker
-            dateFormat="dd-MM-yyyy HH:mm:ss"
-            isClearable
-            meIntervals={15}
-            showYearDropdown
-            scrollableYearDropdown
-          />
+
+          <Datetime onChange={(e) => setEnds(e._d)} />
         </Form.Group>
       </Form.Row>
       <Form.Row>
