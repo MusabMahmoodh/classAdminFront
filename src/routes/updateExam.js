@@ -52,7 +52,7 @@ export const UpdateExam = () => {
         setSubscriptions(responseB.data);
 
         const res = await api.fetchExam(id, userData.token);
-        console.log(res.data.interval);
+        //console.log(res.data.interval);
         setName(res.data.name);
         setBatch(res.data.batch.name);
         setBatchId(res.data.batch._id);
@@ -79,9 +79,9 @@ export const UpdateExam = () => {
           type: res.data.answer.contentType,
           base64: res.data.answer.imageBase64,
         });
-        console.log(question);
+        //console.log(question);
       } catch (error) {
-        console.log("Error");
+        //console.log("Error");
       }
     };
 
@@ -125,7 +125,7 @@ export const UpdateExam = () => {
           progress: undefined,
         });
       }
-      // console.log(response.data.data);
+      // //console.log(response.data.data);
     } catch (error) {
       toast.error("Creation failed!", {
         position: "top-center",
@@ -136,7 +136,7 @@ export const UpdateExam = () => {
         draggable: true,
         progress: undefined,
       });
-      console.log(error);
+      //console.log(error);
     }
   };
   return (

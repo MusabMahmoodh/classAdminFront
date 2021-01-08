@@ -4,7 +4,7 @@ import AddSubscriptionForm from "./AddSubscriptionForm";
 
 function CustomToggle({ children, eventKey }) {
   const decoratedOnClick = useAccordionToggle(eventKey, () =>
-    console.log("totally custom!")
+    //console.log("totally custom!")
   );
 
   return (

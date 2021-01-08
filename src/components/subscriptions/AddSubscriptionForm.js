@@ -16,9 +16,9 @@ const AddSubscriptionForm = () => {
       try {
         const response = await api.fetchBatches(userData.token);
         setBatches(response.data);
-        console.log(response.data);
+        //console.log(response.data);
       } catch (error) {
-        console.log("Error");
+        //console.log("Error");
       }
     };
 
@@ -37,7 +37,7 @@ const AddSubscriptionForm = () => {
       );
       if (response.data) {
         addSubscription(response.data);
-        console.log(response.data);
+        //console.log(response.data);
         setName("");
         setBatch("");
         toast.success("Successfully created !", {
@@ -61,9 +61,9 @@ const AddSubscriptionForm = () => {
           progress: undefined,
         });
       }
-      console.log(response.data);
+      //console.log(response.data);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
   return (

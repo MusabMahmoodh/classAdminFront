@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Form, Button } from "react-bootstrap";
-import DatePicker from "react-datepicker";
+
 import moment from "moment-timezone";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-datetime/css/react-datetime.css";
@@ -45,12 +45,12 @@ export const Essay = () => {
       try {
         const response = await api.fetchBatches(userData.token);
         setBatches(response.data);
-        console.log(response.data);
+        //console.log(response.data);
         const responseB = await api.fetchSubscriptions(userData.token);
         setSubscriptions(responseB.data);
-        console.log(response.data);
+        //console.log(response.data);
       } catch (error) {
-        console.log("Error");
+        //console.log("Error");
       }
     };
 
@@ -95,7 +95,7 @@ export const Essay = () => {
           progress: undefined,
         });
       }
-      console.log(response.data.data);
+      //console.log(response.data.data);
     } catch (error) {
       toast.error("Creation failed!", {
         position: "top-center",
@@ -106,7 +106,7 @@ export const Essay = () => {
         draggable: true,
         progress: undefined,
       });
-      console.log(error);
+      //console.log(error);
     }
   };
   return (

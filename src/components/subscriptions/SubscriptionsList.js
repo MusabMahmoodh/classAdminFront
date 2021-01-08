@@ -13,7 +13,7 @@ export default function Subscriptions(props) {
       try {
         const response = await api.fetchSubscriptions(userData.token);
         setSubscriptions(response.data);
-        // console.log(response.data);
+        // //console.log(response.data);
         if (props.batchId) {
           setSelectedSubscriptions(
             subscriptions.filter((sub) => sub.batch._id === props.batchId)
@@ -22,7 +22,7 @@ export default function Subscriptions(props) {
           setSelectedSubscriptions(subscriptions);
         }
       } catch (error) {
-        console.log("Error");
+        //console.log("Error");
       }
     };
     fetchData();

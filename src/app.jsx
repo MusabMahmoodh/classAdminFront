@@ -64,7 +64,7 @@ toast.configure()
       const tokenRes = await api.validate(token);
       if (tokenRes.data) {
         const userRes = await api.fetchTeacher(token);
-        // console.log(userRes);
+        // //console.log(userRes);
         setUserData({
           token,
           user: userRes.data._id,
@@ -78,7 +78,7 @@ toast.configure()
   }, []);
   
   const addStudent = (student) => {
-    console.log(student);
+    // //console.log(student);
     setStudents([...students, student]);
   };
   const addSubscription = (subscription) => {
@@ -119,7 +119,7 @@ toast.configure()
                 ) : (
               
                 <>
-                {console.log("not authenticated")}
+                {/* {//console.log("not authenticated")} */}
                 <Redirect to="/login" />
                 </>
                     

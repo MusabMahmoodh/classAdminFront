@@ -4,7 +4,7 @@ import UserContext from "./context/TeacherContext";
 
 function ProtectedRoute({ component: Component, logout, ...rest }) {
   const { isAuthenticated } = useContext(UserContext);
-  // console.log(isAuthenticated);
+  // //console.log(isAuthenticated);
   return (
     <Route
       {...rest}

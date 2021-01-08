@@ -11,10 +11,10 @@ const ViewStudent = () => {
     const fetchData = async () => {
       try {
         const response = await api.fetchStudent(id, userData.token);
-        // console.log(response.data);
+        // //console.log(response.data);
         setStudent(response.data);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     };
 

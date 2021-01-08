@@ -16,7 +16,7 @@ export default function Login() {
     try {
       const loginUser = { name, password };
       const loginRes = await api.login(loginUser);
-      console.log(loginRes);
+      // //console.log(loginRes);
       setUserData({
         ...userData,
         token: loginRes.data.token,
@@ -25,7 +25,7 @@ export default function Login() {
       localStorage.setItem("auth-token", loginRes.data.token);
       login();
     } catch (err) {
-      console.log(err);
+      // //console.log(err);
     }
   };
   return (

@@ -19,9 +19,9 @@ const AddStudentForm = () => {
       try {
         const response = await api.fetchBatches(userData.token);
         setBatches(response.data);
-        console.log(response.data);
+        //console.log(response.data);
       } catch (error) {
-        console.log("Error");
+        //console.log("Error");
       }
     };
 
@@ -38,10 +38,10 @@ const AddStudentForm = () => {
         indexNo: index,
       };
       const response = await api.createStudent(newStudent, userData.token);
-      // console.log(response.data.indexNo);
+      // //console.log(response.data.indexNo);
       if (response.data) {
         addStudent(response.data);
-        // console.log(students);
+        // //console.log(students);
         setName("");
         setBatch("");
         setPassword("");
@@ -68,9 +68,9 @@ const AddStudentForm = () => {
         });
       }
 
-      // console.log(response);
+      // //console.log(response);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
   return (

@@ -23,7 +23,7 @@ const ViewSubscription = () => {
         const res = await api.fetchSubscription(id, userData.token);
         setSubscribers(res.data.students);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     };
 
@@ -35,17 +35,17 @@ const ViewSubscription = () => {
     );
   }, [subscribers]);
   const removeSubscriber = async (student) => {
-    // console.log(id, { stu_id: student._id }, userData.token);
+    // //console.log(id, { stu_id: student._id }, userData.token);
     try {
       const response = await api.removeSubscribers(
         id,
         { stu_id: student._id },
         userData.token
       );
-      console.log(response);
+      //console.log(response);
       if (response.status === 204) {
         setSubscribers(subscribers.filter((sub) => sub._id !== student._id));
-        // console.log(students);
+        // //console.log(students);
         toast.success("Successfully removed !", {
           position: "top-center",
           autoClose: 5000,
@@ -67,9 +67,9 @@ const ViewSubscription = () => {
           progress: undefined,
         });
       }
-      console.log(response);
+      //console.log(response);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
   const addSubscriber = async (student) => {
@@ -79,10 +79,10 @@ const ViewSubscription = () => {
         { stu_id: student._id },
         userData.token
       );
-      // console.log(response);
+      // //console.log(response);
       if (response.status === 204) {
         setSubscribers([...subscribers, student]);
-        // console.log(students);
+        // //console.log(students);
         toast.success("Successfully added !", {
           position: "top-center",
           autoClose: 5000,
@@ -105,9 +105,9 @@ const ViewSubscription = () => {
         });
       }
 
-      // console.log(response);
+      // //console.log(response);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
   return (

@@ -10,11 +10,11 @@ export default function ExamList() {
     const fetchData = async () => {
       try {
         const response = await api.fetchExams(userData.token);
-        // console.log(response.data);
+        // //console.log(response.data);
         setExams(response.data);
-        // console.log(response.data);
+        // //console.log(response.data);
       } catch (error) {
-        console.log("Error");
+        //console.log("Error");
       }
     };
     fetchData();
@@ -23,8 +23,8 @@ export default function ExamList() {
     try {
       const res = await api.deleteExam(id);
       setExams(exams.filter((exam) => exam._id !== id));
-      // console.log(exams);
-      // console.log(res);
+      // //console.log(exams);
+      // //console.log(res);
     } catch (error) {}
   };
   return (

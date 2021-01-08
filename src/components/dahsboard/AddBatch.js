@@ -14,11 +14,11 @@ const AddBatch = () => {
         name,
       };
       const response = await api.createBatch(newBatch, userData.token);
-      console.log(response);
+      //console.log(response);
 
       if (response.status === 201) {
         setBatches([...batches, response.data]);
-        console.log(response.data);
+        //console.log(response.data);
         setName("");
 
         toast.success("Successfully added new batch!", {
@@ -42,9 +42,9 @@ const AddBatch = () => {
           progress: undefined,
         });
       }
-      //   console.log(response.data);
+      //   //console.log(response.data);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
   return (

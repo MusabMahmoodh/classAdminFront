@@ -14,7 +14,7 @@ export default function StickyHeadTable() {
           setStudents(response.data)
         } catch (error) {
 
-          console.log(error)
+          //console.log(error)
         }
       }
       
@@ -26,9 +26,9 @@ export default function StickyHeadTable() {
         
         const res = await api.deleteStudent(id,userData.token)
         setStudents(students.filter((student) => student._id !== id));
-        console.log(students)
+        //console.log(students)
         
-        console.log(res)
+        //console.log(res)
       } catch (error) {
         
       }

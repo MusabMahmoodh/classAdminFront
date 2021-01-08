@@ -19,12 +19,12 @@ const ViewExam = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const { userData } = useContext(UserContext);
-  console.log(id);
+  //console.log(id);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await api.fetchExam(id, userData.token);
-        console.log(res.data);
+        //console.log(res.data);
         setName(res.data.name);
         setBatch(res.data.batch.name);
         setStartTime(res.data.start_time);
@@ -37,7 +37,7 @@ const ViewExam = () => {
         setQuestion(res.data.question.imageBase64);
         setAnswer(res.data.answer.imageBase64);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     };
     fetchData();
@@ -54,7 +54,7 @@ const ViewExam = () => {
           subscription={subscription}
           interval={interval}
         />
-        {console.log(question)}
+        {//console.log(question)}
       </Tab>
       <Tab eventKey="profile" title="Question">
         <QuestionPanel question={question} answer={answer} />
