@@ -54,7 +54,7 @@ const ViewExam = () => {
           subscription={subscription}
           interval={interval}
         />
-        {//console.log(question)}
+        {/* {//console.log(question)} */}
       </Tab>
       <Tab eventKey="profile" title="Question">
         <QuestionPanel question={question} answer={answer} />

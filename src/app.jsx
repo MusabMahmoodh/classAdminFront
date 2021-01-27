@@ -21,6 +21,7 @@ import ViewBatch from './routes/viewBatch'
 import AddExam from './routes/addExam'
 import viewSubscription from './routes/viewSubscription'
 import ViewExam from './routes/viewExam'
+import Notifications from './routes/Notifications'
 import UpdateExam from './routes/updateExam'
 import Login from "./components/auth/Login";
 import ViewStudent from "./components/students/ViewStudent";
@@ -134,6 +135,12 @@ toast.configure()
                 path="/dashboard"
                 logout={logout}
                 component={Dashboard}
+              />
+              <ProtectedRoute
+                isAuthenticated={isAuthenticated}
+                path="/notifications"
+                logout={logout}
+                component={Notifications}
               />
               <ProtectedRoute
                 isAuthenticated={isAuthenticated}

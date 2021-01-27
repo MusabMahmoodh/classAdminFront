@@ -4,6 +4,7 @@ export const sidebarItems = [
 
     path: "/",
   },
+
   {
     name: "Students",
 
@@ -18,5 +19,10 @@ export const sidebarItems = [
     name: "Subscriptions",
 
     path: "/subscriptions",
+  },
+  {
+    name: "Send notifications",
+
+    path: "/notifications",
   },
 ];
